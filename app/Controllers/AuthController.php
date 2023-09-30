@@ -35,16 +35,48 @@ class AuthController extends BaseController
             }
         }
 
-
         return view('login', $data);
     }
-    public function logout()
-{
-// Destroy the user session to log out
-$session = session();
-$session->remove('user_id');
 
-// Redirect to the login page or any other desired page
-return redirect()->to('/login');
-}
+    public function logout()
+    {
+        // Destroy the user session to log out
+        $session = session();
+        $session->remove('user_id');
+
+        // Redirect to the login page or any other desired page
+        return redirect()->to('/login');
+    }
+
+    public function register()
+    {
+        $data = [];
+
+        if ($this->request->getMethod() === 'post') {
+            // Validate the input data for registration
+            $rules = [
+                'name' => 'required',
+                'email' => 'required|valid_email|is_unique[users.email]',
+                'password' => 'required|min_length[8]',
+            ];
+
+            if ($this->validate($rules)) {
+                // Hash the password
+                $hashedPassword = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+
+                // Insert the new user into the database
+                $userModel = new UserModel();
+                $userModel->insert([
+                    'name' => $this->request->getPost('name'),
+                    'email' => $this->request->getPost('email'),
+                    'password' => $hashedPassword,
+                ]);
+
+                // Redirect to the login page after successful registration
+                return redirect()->to('/login');
+            }
+        }
+
+        return view('register', $data);
+    }
 }

@@ -315,3 +315,10 @@ in APPPATH\Controllers\AuthController.php on line 75.
  6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Ecom\\public\\index.php')
+CRITICAL - 2023-09-30 16:25:52 --> Class "App\Controllers\UserSessionModel" not found
+in APPPATH\Controllers\AuthController.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Ecom\\public\\index.php')
