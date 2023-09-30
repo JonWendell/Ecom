@@ -117,6 +117,7 @@
 <body>
     <header>
         <h1>SHOPEE</h1>
+        <a href="/logout">Logout</a>
     </header>
     <div class="container">
         <form action="/save" method="post">
@@ -170,6 +171,7 @@
                 <a href="/delete/<?= $pr['id'] ?>" class="btn red">Delete</a>
                 <a href="/edit/<?= $pr['id'] ?>" class="btn green">Edit</a>
                 <a href="/product/view/<?= $pr['id'] ?>" class="btn blue">View</a>
+
 
             </ul>
         <?php endforeach ?>
