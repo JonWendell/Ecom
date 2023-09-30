@@ -89,6 +89,28 @@
        .btn.green {
            background-color: #008000; /* Green */
        }
+       /* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.red {
+    background-color: #FF0000; /* Red */
+}
+
+.btn.green {
+    background-color: #008000; /* Green */
+}
+
+.btn.blue {
+    background-color: #0000FF; /* Blue */
+}
+
  </style>
 </head>
 
@@ -147,6 +169,8 @@
                 </li>
                 <a href="/delete/<?= $pr['id'] ?>" class="btn red">Delete</a>
                 <a href="/edit/<?= $pr['id'] ?>" class="btn green">Edit</a>
+                <a href="/product/view/<?= $pr['id'] ?>" class="btn blue">View</a>
+
             </ul>
         <?php endforeach ?>
     </div>

@@ -76,5 +76,19 @@ class ProductController extends BaseController
 
         return view('products', $data);
     }
+    public function view($id)
+{
+    $productModel = new ProductModel();
+    $product = $productModel->find($id);
+
+    if ($product) {
+        $data['product'] = $product;
+        return view('product_view', $data); // Create a new view file for product details
+    } else {
+        // Handle the case where the product with the given ID is not found.
+        echo 'Product not found';
+    }
+}
+
 
 }
