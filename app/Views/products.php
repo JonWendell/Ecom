@@ -4,119 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Management</title>
+    <title>SHOPEE</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+    /* Body Styles */
+       body {
+           background-color: #000;
+           color: #fff;
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+       }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
+       /* Header Styles */
+       header {
+           background-color: #FFD700; /* Gold */
+           padding: 20px;
+           text-align: center;
+       }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
 
-        h1 {
-            margin-top: 0;
-        }
+       header h1 {
+           color: #000; /* Black */
+       }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+       /* Form Styles */
+       .container {
+           max-width: 600px;
+           margin: 0 auto;
+           padding: 20px;
+       }
 
-        table,
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
+       form label {
+           color: #FFD700; /* Gold */
+       }
 
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
+       input[type="text"],
+       input[type="number"],
+       select {
+           width: 100%;
+           padding: 10px;
+           margin-bottom: 15px;
+           border: 1px solid #FFD700; /* Gold */
+           background-color: #000;
+           color: #fff;
+       }
 
-        th {
-            background-color: #333;
-            color: #fff;
-        }
+       input[type="submit"] {
+           background-color: #FFD700; /* Gold */
+           color: #000; /* Black */
+           border: none;
+           padding: 10px 20px;
+           cursor: pointer;
+       }
 
-        form {
-            margin-top: 20px;
-        }
+       /* Product Listing Styles */
+       h2 {
+           margin-top: 20px;
+           color: #FFD700; /* Gold */
+       }
 
-        label {
-            font-weight: bold;
-        }
+       ul {
+           list-style: none;
+           padding: 0;
+       }
 
-        input[type="text"],
-        input[type="number"] {
-            width: 95%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
+       li {
+           margin-bottom: 10px;
+       }
 
-        select {
-            width: 98%;
+       /* Button Styles */
+       .btn {
+           display: inline-block;
+           padding: 10px 20px;
+           text-decoration: none;
+           color: #fff;
+           border: none;
+           cursor: pointer;
+       }
 
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
+       .btn.red {
+           background-color: #FF0000; /* Red */
+       }
 
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #333;
-            margin-right: 10px;
-            background-color: ;
-        }
-        .btn{
-            background-color: #4CAF50;
-            /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        .red {background-color: #f44336;} /* Red */
-    </style>
+       .btn.green {
+           background-color: #008000; /* Green */
+       }
+ </style>
 </head>
 
 <body>
     <header>
-        <h1>Product Management</h1>
+        <h1>SHOPEE</h1>
     </header>
     <div class="container">
         <form action="/save" method="post">
@@ -149,7 +127,7 @@
 
             <input type="submit" value="Save">
         </form>
-        <h2>Product Listing</h2>
+        <h2>Product List</h2>
         <?php foreach ($product as $pr): ?>
             <ul>
                 <li><strong>Product Name:</strong>

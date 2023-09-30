@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class CategoryModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'categorie';
+    protected $table            = 'table_category';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
