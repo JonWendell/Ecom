@@ -12,8 +12,15 @@ class ProductController extends BaseController
 
     public function __construct()
     {
-        $this->product = new ProductModel();
-    }
+
+      // Check if the user is logged in
+       $session = session();
+       if (!$session->has('user_id')) {
+           return redirect()->to(base_url('login')); // Redirect to the login page if not logged in
+       }
+
+       $this->product = new ProductModel();
+   }
 
     public function delete($id)
     {

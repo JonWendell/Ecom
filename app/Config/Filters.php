@@ -19,6 +19,8 @@ class Filters extends BaseConfig
      * @phpstan-var array<string, class-string>
      */
     public array $aliases = [
+
+        'auth' => \App\Filters\AuthMiddleware::class,
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
@@ -66,5 +68,10 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [ 'auth' => [
+        // Add your protected routes here
+        'before' => ['protectedRoute1', 'protectedRoute2'],
+        'guest' => ['before' => ['product']],
+    ],
+  ];
 }

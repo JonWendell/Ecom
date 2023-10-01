@@ -15,5 +15,11 @@ use CodeIgniter\Router\RouteCollection;
 $routes->post('/register', 'AuthController::register');
 $routes->get('/login', 'AuthController::login');
 $routes->post('/login', 'AuthController::login');
+$routes->get('product', 'ProductController::index', ['filter' => 'auth']);
+
 
 $routes->get('/logout', 'AuthController::logout');
+$routes->group('protected', ['filter' => 'auth'], function($routes)
+{
+    $routes->get('product', 'ProductController::index'); // Protect the product page
+});
